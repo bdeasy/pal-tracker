@@ -1,30 +1,31 @@
 plugins {
-  id "java"
-  id 'org.springframework.boot' version '1.5.9.RELEASE'
+    id "java"
+    id 'org.springframework.boot' version '1.5.9.RELEASE'
 }
 
 repositories {
-  mavenCentral()
+    mavenCentral()
 }
 
 
 dependencies {
-  compile("org.springframework.boot:spring-boot-starter-web")
-  testCompile("org.springframework.boot:spring-boot-starter-test")
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.9.1")
+    testCompile("org.springframework.boot:spring-boot-starter-test")
 }
 
 bootRun.environment([
-        "WELCOME_MESSAGE": "hello",
-        "PORT": "8675",
-        "MEMORY_LIMIT": "12G",
+        "WELCOME_MESSAGE"  : "hello",
+        "PORT"             : "8675",
+        "MEMORY_LIMIT"     : "12G",
         "CF_INSTANCE_INDEX": "34",
-        "CF_INSTANCE_ADDR": "123.sesame.street"
+        "CF_INSTANCE_ADDR" : "123.sesame.street"
 ])
 
 test.environment([
-        "WELCOME_MESSAGE": "Hello from test",
-        "PORT": "8675",
-        "MEMORY_LIMIT": "12G",
+        "WELCOME_MESSAGE"  : "Hello from test",
+        "PORT"             : "8675",
+        "MEMORY_LIMIT"     : "12G",
         "CF_INSTANCE_INDEX": "34",
-        "CF_INSTANCE_ADDR": "123.sesame.street"
+        "CF_INSTANCE_ADDR" : "123.sesame.street"
 ])

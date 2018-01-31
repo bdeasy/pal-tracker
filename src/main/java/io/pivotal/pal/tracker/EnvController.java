@@ -11,7 +11,7 @@ import java.util.Map;
 public class EnvController {
     Map<String, String> envMap;
 
-    public EnvController(@Value("${PORT}") String port, @Value("${MEMORY_LIMIT}") String memoryLimit, @Value("${CF_INSTANCE_INDEX}") String instanceIndex, @Value("${CF_INSTANCE_ADDR}") String instanceAddr) {
+    public EnvController(@Value("${PORT:NOT SET}") String port, @Value("${MEMORY_LIMIT:NOT SET}") String memoryLimit, @Value("${CF_INSTANCE_INDEX:NOT SET}") String instanceIndex, @Value("${CF_INSTANCE_ADDR:NOT SET}") String instanceAddr) {
         envMap = new HashMap<>();
 
         envMap.put("PORT", port);
