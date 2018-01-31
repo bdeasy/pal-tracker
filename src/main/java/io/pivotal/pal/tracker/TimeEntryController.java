@@ -55,6 +55,7 @@ public class TimeEntryController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<TimeEntry> delete(@PathVariable long id) {
-        return ResponseEntity.status(HttpStatus.NO_CONTENT).body(repository.delete(id));
+        repository.delete(id);
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 }
